@@ -68,11 +68,13 @@ public abstract class BaseHandler extends SearchHandler implements Loggable {
 				if (pool != null) {
 					pool.stop();
 				}
+				_preClose();
 				getLogger().info("closing solr core...{}", this.getClass());
 			}
 
 			@Override
 			public void postClose(SolrCore sc) {
+				_postClose();
 				getLogger().info("closed solr core...{}", this.getClass());
 			}
 		});
@@ -84,6 +86,9 @@ public abstract class BaseHandler extends SearchHandler implements Loggable {
 			getLogger().error("", e);
 		}
 	}
+	
+	protected abstract void _preClose();
+	protected abstract void _postClose();
 
 	/**
 	 * Hàm này dùng để thêm các tham số defaults và mặ định cho nó tiện

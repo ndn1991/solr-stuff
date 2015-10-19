@@ -1,4 +1,4 @@
-package com.ndn.solr.stuff.common.handler;
+package com.ndn.solr.stuff.common.wt;
 
 import java.io.IOException;
 import java.io.Writer;
