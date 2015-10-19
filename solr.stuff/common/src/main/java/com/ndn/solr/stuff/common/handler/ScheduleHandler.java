@@ -3,17 +3,19 @@ package com.ndn.solr.stuff.common.handler;
 import org.apache.solr.core.SolrResourceLoader;
 import org.apache.solr.request.SolrQueryRequest;
 import org.apache.solr.response.SolrQueryResponse;
-
 //<lst name="config">
 //	<lst name="schedule">
-//		<!-- unique name -->
-//		<str name="name"></str>
-//		<!-- dd-mm-yyy hh:MM:ss.SSS -->
-//		<str name="start">20-10-2015 01:00:00.000</str>
+//		<str name="name">deal-scheduler</str>
+//		<str name="type">interval</str>
 //		<int name="interval">10</int>
 //		<str name="unit">MINUTES</str>
+//		<boolean name="start">true</boolean>
 //	</lst>
 //	<lst name="schedule">
+//		<str name="name">merchant-scheduler</str>
+//		<str name="type">crond</str>
+//		<str name="expression">******</str>
+//		<boolean name="start">false</boolean>
 //	</lst>
 //</lst>
 
@@ -39,7 +41,6 @@ public class ScheduleHandler extends BaseHandler {
 	@Override
 	protected void _preClose() {
 		// TODO Auto-generated method stub
-
 	}
 
 	@Override
@@ -48,8 +49,7 @@ public class ScheduleHandler extends BaseHandler {
 
 	@Override
 	protected void inform(SolrResourceLoader resourceLoader) throws Exception {
-		// TODO Auto-generated method stub
-
+		
 	}
 
 	@Override
